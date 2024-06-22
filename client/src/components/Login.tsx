@@ -19,10 +19,10 @@ const Login: FC = () => {
         }
     })
     if (loading) return <h5>Loading....</h5>
-    // if(data){
-    //     localStorage.setItem('token',data.user.token);
-    //     navigate("/")
-    // }
+    if(data){
+        localStorage.setItem('token',data.user.token);
+        navigate("/")
+    }
     const inputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setFormData({
             ...formData,

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { BrowserRouter, useRoutes } from 'react-router-dom'
+import { useRoutes } from 'react-router-dom'
 import NavBar from './NavBar'
 import { routes } from './routes'
 const Router: FC = () => {

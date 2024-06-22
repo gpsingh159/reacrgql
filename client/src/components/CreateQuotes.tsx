@@ -1,13 +1,14 @@
 import { useMutation } from "@apollo/client";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { CREATE_QUOTE } from "./gqloperation/mutations";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 type Quote = {
-    quote:string
+    quote:string,
+    by?:string
 }
 const CreateQuotes = () => {
-    const [formData, setFormData] = useState<Quote>({});
-    const navigate = useNavigate();
+    const [formData, setFormData] = useState<Quote>({quote:''});
+    // const navigate = useNavigate();
     const [createQuote, { data, loading, error }] = useMutation(CREATE_QUOTE,{
         onCompleted:()=>{
           //  navigate("/")

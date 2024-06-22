@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink, useLocation, useNavigate, useParams } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 const NavBar: React.FC = () => {
     const token = localStorage.getItem("token");

@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client"
-import { useEffect } from "react"
+// import { useEffect } from "react"
 import { GET_ALL_QUOTES } from "./gqloperation/queries"
 import { Link } from "react-router-dom"
 
