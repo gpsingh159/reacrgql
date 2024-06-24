@@ -56,7 +56,7 @@ const resolvers = {
                 throw new Error("Password does not match.")
             }
 
-            const token = jwt.sign({ userId: user._id }, JWT_SECRET);
+            const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
             return { token }
         },
         // first-root or parent, second variable and third context
