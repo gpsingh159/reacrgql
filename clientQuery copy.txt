@@ -1,0 +1,94 @@
+------------
+query Example {
+  greeting
+}
+  query getAllUsers {
+    users {
+      id
+      FirstName
+      LastName
+      email
+
+    }
+  }
+  ----------------
+   query getAllQuotes{
+    quotes {
+      name
+      by
+    }
+  }
+
+  -------------
+    query UsersWithQuotes{
+    usersWithQuotes {
+      id
+      FirstName
+      LastName
+      quotes {
+        name
+        by
+      }
+      
+    }
+  }
+
+
+---------------
+
+query UserById($userId: ID!) {
+  user(id: $userId) {
+    FirstName
+    LastName
+    email
+    quotes {
+      name
+      by
+    }
+  }
+}
+---------------
+
+query QuotesByUser($by: ID!){
+ iquotes(by: $by) {
+   by
+   name
+ }
+}
+-----------------
+mutation SignupUser($firstName: String!, $lastName: String!, $email: String!, $password: String!) {
+  signupUser(FirstName: $firstName, LastName: $lastName, Email: $email, Password: $password) {
+    id
+    FirstName
+    LastName
+    Email
+
+    
+  }
+}
+
+---
+{
+  "by": "1",
+  "firstName": "ram4",
+  "lastName": "siingh",
+  "email": "ram4@gmail.com",
+  "password": "12323"
+}
+------------------------
+mutation RegisterUser($userNew: UserInput) {
+  registerUser(UserNew: $userNew) {
+    id
+    FirstName
+    LastName
+    Email
+  }
+}
+---
+{
+  "firstName": "ram5",
+  "lastName": "siingh",
+  "email": "ram4@gmail.com",
+  "password": "12323",
+  "userNew": null
+}

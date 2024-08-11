@@ -1,0 +1,113 @@
+------------
+query Example {
+  greeting
+}
+  query getAllUsers {
+    users {
+      _id
+      FirstName
+      LastName
+      email
+
+    }
+  }
+  ----------------
+   query getAllQuotes{
+    quotes {
+      name
+      by
+    }
+  }
+
+  -------------
+    query UsersWithQuotes{
+    usersWithQuotes {
+      _id
+      FirstName
+      LastName
+      quotes {
+        name
+        by
+      }
+      
+    }
+  }
+
+
+---------------
+
+query UserById($userId: ID!) {
+  user(_id: $userId) {
+    FirstName
+    LastName
+    email
+    quotes {
+      name
+      by
+    }
+  }
+}
+---------------
+
+query QuotesByUser($by: ID!){
+ iquotes(by: $by) {
+   by
+   name
+ }
+}
+-----------------
+mutation SignupUser($firstName: String!, $lastName: String!, $email: String!, $password: String!) {
+  signupUser(FirstName: $firstName, LastName: $lastName, Email: $email, Password: $password) {
+    _id
+    FirstName
+    LastName
+    Email
+
+    
+  }
+}
+
+---
+{
+  "by": "1",
+  "firstName": "ram4",
+  "lastName": "siingh",
+  "email": "ram4@gmail.com",
+  "password": "12323"
+}
+------------------------
+mutation createUser($userNew: UserInput) {
+  signupUser(UserNew: $userNew) {
+    _id
+    FirstName
+    LastName
+    Email
+  }
+}
+---
+{
+  "firstName": "ram5",
+  "lastName": "siingh",
+  "email": "ram4@gmail.com",
+  "password": "12323",
+  "userNew": null
+}
+
+------------------
+mongo db
+mutation SignupUser($userNew: UserInput) {
+  User:signupUser(UserNew: $userNew) {
+    _id
+    firstName
+    lastName
+    email
+    password
+  }
+}
+----
+mutation SinginUser($userSignin: UserSigninInput) {
+  singinUser(userSignin: $userSignin) {
+    token
+  }
+}
+----

@@ -1,0 +1,16 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css");
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.my-container{
+    max-width: 600px !important;
+    
+}
+a.active{
+    background-color: rgba(0, 0, 0, 0.1);
+}
