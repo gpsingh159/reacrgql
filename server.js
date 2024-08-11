@@ -63,6 +63,9 @@ const server = new ApolloServer({
 });
 
 await server.start();
+// app.get("/",(req,res)=>{
+//     res.send("boom! ")
+// })
 
 // if(process.env.NODE_ENV == "production"){
     app.use(express.static("client/dist"))
